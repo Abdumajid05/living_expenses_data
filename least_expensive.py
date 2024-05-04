@@ -1,5 +1,5 @@
 import json
-
+import get_data
 def least_expensive(file_path: str) -> str:
     """
     get least expensive item from json file
@@ -12,7 +12,9 @@ def least_expensive(file_path: str) -> str:
     """
     pass
 
-# test
-file_path = "data.json"
-least_expensive_item = least_expensive(file_path)
-print(least_expensive_item)
+    a=list((get_data.get_data(file_path)).values())
+    b=list((get_data.get_data(file_path)).keys())
+    k=min(a)
+    x=a.index(k)
+    return b[x]
+print(least_expensive(('data.json')))
